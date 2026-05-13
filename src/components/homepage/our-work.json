@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_homepage_our_works",
+  "info": {
+    "displayName": "Our Work"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "string"
+    },
+    "card": {
+      "type": "component",
+      "component": "homepage.clients",
+      "repeatable": true
+    },
+    "viewAll": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_menus_locations",
+  "info": {
+    "displayName": "Location"
+  },
+  "options": {},
+  "attributes": {
+    "city": {
+      "type": "string"
+    },
+    "address": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

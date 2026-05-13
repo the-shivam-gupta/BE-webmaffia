@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_homepage_portfolios",
+  "info": {
+    "displayName": "Portfolio"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    },
+    "button": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

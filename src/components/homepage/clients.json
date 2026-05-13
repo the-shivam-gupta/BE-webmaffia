@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_homepage_clients",
+  "info": {
+    "displayName": "Cards"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "href": {
+      "type": "string",
+      "default": "/"
+    }
+  },
+  "config": {}
+}

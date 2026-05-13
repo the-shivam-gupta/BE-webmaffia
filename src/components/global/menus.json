@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_global_menus",
+  "info": {
+    "displayName": "Navigation"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "component": "global.menu-items",
+      "repeatable": true
+    },
+    "location": {
+      "type": "component",
+      "component": "menus.location",
+      "repeatable": true
+    },
+    "socials": {
+      "type": "component",
+      "component": "menus.socials",
+      "repeatable": true
+    },
+    "button": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

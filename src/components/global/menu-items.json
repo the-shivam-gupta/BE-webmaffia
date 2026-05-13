@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_global_menu_items",
+  "info": {
+    "displayName": "Menu Items"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subMenu": {
+      "type": "component",
+      "component": "global.sub-menu",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
