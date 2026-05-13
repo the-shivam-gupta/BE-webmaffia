@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_us_latest_wins",
+  "info": {
+    "displayName": "Latest Wins"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "card": {
+      "type": "component",
+      "component": "homepage.clients",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

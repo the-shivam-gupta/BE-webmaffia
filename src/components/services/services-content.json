@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_services_services_contents",
+  "info": {
+    "displayName": "Services Content"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "slidingText": {
+      "type": "component",
+      "component": "services.slider-text",
+      "repeatable": true
+    },
+    "button": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

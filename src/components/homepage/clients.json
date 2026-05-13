@@ -14,7 +14,7 @@
     },
     "href": {
       "type": "string",
-      "default": "/"
+      "default": "/awards"
     }
   },
   "config": {}

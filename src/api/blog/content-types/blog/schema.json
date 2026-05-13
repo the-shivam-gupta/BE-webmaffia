@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pageName": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "pageName"
+    },
+    "banner": {
+      "type": "component",
+      "component": "global.banner",
+      "repeatable": false
+    },
+    "posts": {
+      "type": "component",
+      "component": "blogs.posts",
+      "repeatable": true
+    }
+  }
+}

@@ -1,5 +1,62 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AboutUsContent extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_contents';
+  info: {
+    displayName: 'Content';
+  };
+  attributes: {
+    contactUs: Schema.Attribute.Component<'global.button', false>;
+    description: Schema.Attribute.RichText;
+    image: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface AboutUsLatestWins extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_latest_wins';
+  info: {
+    displayName: 'Latest Wins';
+  };
+  attributes: {
+    card: Schema.Attribute.Component<'homepage.clients', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface BlogsPosts extends Struct.ComponentSchema {
+  collectionName: 'components_blogs_posts';
+  info: {
+    displayName: 'Posts';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'global.button', false>;
+    description: Schema.Attribute.RichText;
+    image: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface CareerCareer extends Struct.ComponentSchema {
+  collectionName: 'components_career_careers';
+  info: {
+    displayName: 'Career';
+  };
+  attributes: {
+    accordion: Schema.Attribute.Component<'global.accordion', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface GlobalAccordion extends Struct.ComponentSchema {
+  collectionName: 'components_global_accordions';
+  info: {
+    displayName: 'Accordion';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    jobTitle: Schema.Attribute.String;
+  };
+}
+
 export interface GlobalBanner extends Struct.ComponentSchema {
   collectionName: 'components_global_banners';
   info: {
@@ -62,7 +119,7 @@ export interface HomepageClients extends Struct.ComponentSchema {
     displayName: 'Cards';
   };
   attributes: {
-    href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
+    href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/awards'>;
     image: Schema.Attribute.Media<'images'>;
   };
 }
@@ -138,6 +195,42 @@ export interface MenusSocials extends Struct.ComponentSchema {
   };
 }
 
+export interface OurWorkCaseStudy extends Struct.ComponentSchema {
+  collectionName: 'components_our_work_case_studies';
+  info: {
+    displayName: 'Case Study';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'global.button', false>;
+    image: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String;
+    techStack: Schema.Attribute.String;
+  };
+}
+
+export interface ServicesServicesContent extends Struct.ComponentSchema {
+  collectionName: 'components_services_services_contents';
+  info: {
+    displayName: 'Services Content';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'global.button', false>;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    slidingText: Schema.Attribute.Component<'services.slider-text', true>;
+  };
+}
+
+export interface ServicesSliderText extends Struct.ComponentSchema {
+  collectionName: 'components_services_slider_texts';
+  info: {
+    displayName: 'Slider Text';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
 export interface TestimonialCards extends Struct.ComponentSchema {
   collectionName: 'components_testimonial_cards';
   info: {
@@ -154,6 +247,11 @@ export interface TestimonialCards extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'about-us.content': AboutUsContent;
+      'about-us.latest-wins': AboutUsLatestWins;
+      'blogs.posts': BlogsPosts;
+      'career.career': CareerCareer;
+      'global.accordion': GlobalAccordion;
       'global.banner': GlobalBanner;
       'global.button': GlobalButton;
       'global.menu-items': GlobalMenuItems;
@@ -166,6 +264,9 @@ declare module '@strapi/strapi' {
       'homepage.testimonial': HomepageTestimonial;
       'menus.location': MenusLocation;
       'menus.socials': MenusSocials;
+      'our-work.case-study': OurWorkCaseStudy;
+      'services.services-content': ServicesServicesContent;
+      'services.slider-text': ServicesSliderText;
       'testimonial.cards': TestimonialCards;
     }
   }

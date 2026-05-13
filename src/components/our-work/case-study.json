@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_our_work_case_studies",
+  "info": {
+    "displayName": "Case Study"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "techStack": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

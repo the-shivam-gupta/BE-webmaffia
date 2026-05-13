@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "careers",
+  "info": {
+    "singularName": "career",
+    "pluralName": "careers",
+    "displayName": "career"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pageName": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "pageName"
+    },
+    "banner": {
+      "type": "component",
+      "component": "global.banner",
+      "repeatable": false
+    },
+    "career": {
+      "type": "component",
+      "component": "career.career",
+      "repeatable": false
+    }
+  }
+}
