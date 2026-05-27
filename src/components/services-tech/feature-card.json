@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_services_tech_feature_cards",
+  "info": {
+    "displayName": "FeatureCard"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

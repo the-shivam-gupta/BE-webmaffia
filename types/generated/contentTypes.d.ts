@@ -472,7 +472,35 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiBlogBlog extends Struct.SingleTypeSchema {
+export interface ApiAwardAward extends Struct.SingleTypeSchema {
+  collectionName: 'awards';
+  info: {
+    displayName: 'Awards';
+    pluralName: 'awards';
+    singularName: 'award';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'global.banner', false>;
+    card: Schema.Attribute.Component<'awards.card', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::award.award'> &
+      Schema.Attribute.Private;
+    pageName: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'pageName'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
     displayName: 'Blog';
@@ -483,17 +511,18 @@ export interface ApiBlogBlog extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    banner: Schema.Attribute.Component<'global.banner', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'blogs.read-more', false>;
+    date: Schema.Attribute.String;
+    description: Schema.Attribute.RichText;
+    heading: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
-    pageName: Schema.Attribute.String;
-    posts: Schema.Attribute.Component<'blogs.posts', true>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'pageName'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -503,7 +532,7 @@ export interface ApiBlogBlog extends Struct.SingleTypeSchema {
 export interface ApiCareerCareer extends Struct.SingleTypeSchema {
   collectionName: 'careers';
   info: {
-    displayName: 'career';
+    displayName: 'Career';
     pluralName: 'careers';
     singularName: 'career';
   };
@@ -525,6 +554,45 @@ export interface ApiCareerCareer extends Struct.SingleTypeSchema {
     pageName: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'pageName'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
+  collectionName: 'case_studies';
+  info: {
+    displayName: 'Case Study';
+    pluralName: 'case-studies';
+    singularName: 'case-study';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'global.banner', false>;
+    button: Schema.Attribute.Component<'global.button', false>;
+    challenge: Schema.Attribute.Component<'case-study.challenge', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::case-study.case-study'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      ['case-study.seo', 'case-study.creatives']
+    >;
+    showcase: Schema.Attribute.Component<'case-study.showcase', false>;
+    solution: Schema.Attribute.Component<'case-study.solution', false>;
+    testimonial: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::testimonial.testimonial'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -631,7 +699,6 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    awards: Schema.Attribute.Component<'homepage.our-work', false>;
     banner: Schema.Attribute.Component<'global.banner', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -643,9 +710,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     ourWork: Schema.Attribute.Component<'homepage.our-work', false>;
-    portfolio: Schema.Attribute.Component<'homepage.portfolio', true>;
     publishedAt: Schema.Attribute.DateTime;
-    slider: Schema.Attribute.Component<'homepage.slider', true>;
     testimonial: Schema.Attribute.Component<'homepage.testimonial', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -653,30 +718,37 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiOurWorkOurWork extends Struct.SingleTypeSchema {
-  collectionName: 'our_works';
+export interface ApiServicesTechServicesTech
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'services_teches';
   info: {
-    displayName: 'Our Work';
-    pluralName: 'our-works';
-    singularName: 'our-work';
+    displayName: 'Services';
+    pluralName: 'services-teches';
+    singularName: 'services-tech';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     banner: Schema.Attribute.Component<'global.banner', false>;
-    caseStudy: Schema.Attribute.Component<'our-work.case-study', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::our-work.our-work'
+      'api::services-tech.services-tech'
     > &
       Schema.Attribute.Private;
     pageName: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'services-tech.features',
+        'services-tech.latest-work',
+        'services-tech.technology',
+      ]
+    >;
     slug: Schema.Attribute.UID<'pageName'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -684,34 +756,34 @@ export interface ApiOurWorkOurWork extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiServiceService extends Struct.SingleTypeSchema {
-  collectionName: 'services';
+export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
+  collectionName: 'testimonials';
   info: {
-    displayName: 'Services';
-    pluralName: 'services';
-    singularName: 'service';
+    displayName: 'Testimonial';
+    pluralName: 'testimonials';
+    singularName: 'testimonial';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    banner: Schema.Attribute.Component<'global.banner', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    designation: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::service.service'
+      'api::testimonial.testimonial'
     > &
       Schema.Attribute.Private;
-    pageName: Schema.Attribute.String;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'pageName'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    whatWeOffer: Schema.Attribute.Component<'services.services-content', true>;
   };
 }
 
@@ -1227,14 +1299,16 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::award.award': ApiAwardAward;
       'api::blog.blog': ApiBlogBlog;
       'api::career.career': ApiCareerCareer;
+      'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
-      'api::our-work.our-work': ApiOurWorkOurWork;
-      'api::service.service': ApiServiceService;
+      'api::services-tech.services-tech': ApiServicesTechServicesTech;
+      'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

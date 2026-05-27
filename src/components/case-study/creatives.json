@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_case_study_creatives",
+  "info": {
+    "displayName": "Creatives"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "posts": {
+      "type": "component",
+      "component": "case-study.posts",
+      "repeatable": true
+    },
+    "reels": {
+      "type": "component",
+      "component": "case-study.reels",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

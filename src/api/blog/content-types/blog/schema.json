@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "blogs",
   "info": {
     "singularName": "blog",
@@ -11,22 +11,26 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "pageName": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heading": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "date": {
       "type": "string"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "pageName"
-    },
-    "banner": {
+    "cta": {
       "type": "component",
-      "component": "global.banner",
+      "component": "blogs.read-more",
       "repeatable": false
-    },
-    "posts": {
-      "type": "component",
-      "component": "blogs.posts",
-      "repeatable": true
     }
   }
 }

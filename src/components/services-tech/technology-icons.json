@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_services_tech_technology_icons",
+  "info": {
+    "displayName": "TechnologyIcons"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

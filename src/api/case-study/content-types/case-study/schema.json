@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case_studies",
+  "info": {
+    "singularName": "case-study",
+    "pluralName": "case-studies",
+    "displayName": "Case Study"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "component": "global.banner",
+      "repeatable": false
+    },
+    "challenge": {
+      "type": "component",
+      "component": "case-study.challenge",
+      "repeatable": false
+    },
+    "solution": {
+      "type": "component",
+      "component": "case-study.solution",
+      "repeatable": false
+    },
+    "showcase": {
+      "type": "component",
+      "component": "case-study.showcase",
+      "repeatable": false
+    },
+    "testimonial": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::testimonial.testimonial"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "case-study.seo",
+        "case-study.creatives"
+      ]
+    },
+    "button": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    }
+  }
+}

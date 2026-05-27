@@ -23,6 +23,18 @@ export interface AboutUsLatestWins extends Struct.ComponentSchema {
   };
 }
 
+export interface AwardsCard extends Struct.ComponentSchema {
+  collectionName: 'components_awards_cards';
+  info: {
+    displayName: 'Card';
+  };
+  attributes: {
+    details: Schema.Attribute.RichText;
+    image: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface BlogsPosts extends Struct.ComponentSchema {
   collectionName: 'components_blogs_posts';
   info: {
@@ -35,6 +47,17 @@ export interface BlogsPosts extends Struct.ComponentSchema {
   };
 }
 
+export interface BlogsReadMore extends Struct.ComponentSchema {
+  collectionName: 'components_blogs_read_mores';
+  info: {
+    displayName: 'ReadMore';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
+    text: Schema.Attribute.String & Schema.Attribute.DefaultTo<'READ MORE'>;
+  };
+}
+
 export interface CareerCareer extends Struct.ComponentSchema {
   collectionName: 'components_career_careers';
   info: {
@@ -43,6 +66,93 @@ export interface CareerCareer extends Struct.ComponentSchema {
   attributes: {
     accordion: Schema.Attribute.Component<'global.accordion', true>;
     heading: Schema.Attribute.String;
+  };
+}
+
+export interface CaseStudyChallenge extends Struct.ComponentSchema {
+  collectionName: 'components_case_study_challenges';
+  info: {
+    displayName: 'Challenge';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    lists: Schema.Attribute.Component<'global.lists', true>;
+    subHeading: Schema.Attribute.String;
+  };
+}
+
+export interface CaseStudyCreatives extends Struct.ComponentSchema {
+  collectionName: 'components_case_study_creatives';
+  info: {
+    displayName: 'Creatives';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    posts: Schema.Attribute.Component<'case-study.posts', true>;
+    reels: Schema.Attribute.Component<'case-study.reels', true>;
+  };
+}
+
+export interface CaseStudyPosts extends Struct.ComponentSchema {
+  collectionName: 'components_case_study_posts';
+  info: {
+    displayName: 'Posts';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    media: Schema.Attribute.Media<'images' | 'videos'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface CaseStudyReels extends Struct.ComponentSchema {
+  collectionName: 'components_case_study_reels';
+  info: {
+    displayName: 'Reels';
+  };
+  attributes: {
+    instagramUrl: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
+    title: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'videos'>;
+  };
+}
+
+export interface CaseStudySeo extends Struct.ComponentSchema {
+  collectionName: 'components_case_study_seos';
+  info: {
+    displayName: 'Seo';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    graph: Schema.Attribute.Media<'images'>;
+    heading: Schema.Attribute.String;
+    subHeading: Schema.Attribute.Text;
+  };
+}
+
+export interface CaseStudyShowcase extends Struct.ComponentSchema {
+  collectionName: 'components_case_study_showcases';
+  info: {
+    displayName: 'Showcase';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'global.button', false>;
+    desktopImage: Schema.Attribute.Media<'images'>;
+    mobileImage: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface CaseStudySolution extends Struct.ComponentSchema {
+  collectionName: 'components_case_study_solutions';
+  info: {
+    displayName: 'Solution';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    lists: Schema.Attribute.Component<'global.lists', true>;
+    subheading: Schema.Attribute.Text;
   };
 }
 
@@ -64,7 +174,10 @@ export interface GlobalBanner extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.RichText;
-    image: Schema.Attribute.Media<'images'>;
+    desktopImage: Schema.Attribute.Media<'images'>;
+    heading: Schema.Attribute.String;
+    mobileImage: Schema.Attribute.Media<'images'>;
+    subHeading: Schema.Attribute.String;
   };
 }
 
@@ -76,6 +189,16 @@ export interface GlobalButton extends Struct.ComponentSchema {
   attributes: {
     href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface GlobalLists extends Struct.ComponentSchema {
+  collectionName: 'components_global_lists';
+  info: {
+    displayName: 'Lists';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
   };
 }
 
@@ -166,7 +289,6 @@ export interface HomepageTestimonial extends Struct.ComponentSchema {
     displayName: 'Testimonial';
   };
   attributes: {
-    card: Schema.Attribute.Component<'testimonial.cards', true>;
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     subheading: Schema.Attribute.String;
@@ -205,6 +327,107 @@ export interface OurWorkCaseStudy extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String;
     techStack: Schema.Attribute.String;
+  };
+}
+
+export interface ServicesTechDesignFeatures extends Struct.ComponentSchema {
+  collectionName: 'components_services_tech_design_features';
+  info: {
+    displayName: 'DesignFeatures';
+  };
+  attributes: {
+    card: Schema.Attribute.Component<'services-tech.feature-card', true>;
+    heading: Schema.Attribute.String;
+    subheading: Schema.Attribute.Text;
+  };
+}
+
+export interface ServicesTechFeatureCard extends Struct.ComponentSchema {
+  collectionName: 'components_services_tech_feature_cards';
+  info: {
+    displayName: 'FeatureCard';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface ServicesTechFeatures extends Struct.ComponentSchema {
+  collectionName: 'components_services_tech_features';
+  info: {
+    displayName: 'Features';
+  };
+  attributes: {
+    designFeature: Schema.Attribute.Component<
+      'services-tech.design-features',
+      true
+    >;
+  };
+}
+
+export interface ServicesTechLatestWork extends Struct.ComponentSchema {
+  collectionName: 'components_services_tech_latest_works';
+  info: {
+    displayName: 'LatestWork';
+  };
+  attributes: {
+    projects: Schema.Attribute.Component<'services-tech.projects', true>;
+  };
+}
+
+export interface ServicesTechLink extends Struct.ComponentSchema {
+  collectionName: 'components_services_tech_links';
+  info: {
+    displayName: 'Link';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
+    name: Schema.Attribute.String;
+    type: Schema.Attribute.Text;
+  };
+}
+
+export interface ServicesTechProjects extends Struct.ComponentSchema {
+  collectionName: 'components_services_tech_projects';
+  info: {
+    displayName: 'Projects';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    link: Schema.Attribute.Component<'services-tech.link', false>;
+  };
+}
+
+export interface ServicesTechTechnology extends Struct.ComponentSchema {
+  collectionName: 'components_services_tech_technologies';
+  info: {
+    displayName: 'Technology';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    Items: Schema.Attribute.Component<'services-tech.technology-items', true>;
+  };
+}
+
+export interface ServicesTechTechnologyIcons extends Struct.ComponentSchema {
+  collectionName: 'components_services_tech_technology_icons';
+  info: {
+    displayName: 'TechnologyIcons';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface ServicesTechTechnologyItems extends Struct.ComponentSchema {
+  collectionName: 'components_services_tech_technology_items';
+  info: {
+    displayName: 'TechnologyItems';
+  };
+  attributes: {
+    icon: Schema.Attribute.Component<'services-tech.technology-icons', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -249,11 +472,21 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'about-us.content': AboutUsContent;
       'about-us.latest-wins': AboutUsLatestWins;
+      'awards.card': AwardsCard;
       'blogs.posts': BlogsPosts;
+      'blogs.read-more': BlogsReadMore;
       'career.career': CareerCareer;
+      'case-study.challenge': CaseStudyChallenge;
+      'case-study.creatives': CaseStudyCreatives;
+      'case-study.posts': CaseStudyPosts;
+      'case-study.reels': CaseStudyReels;
+      'case-study.seo': CaseStudySeo;
+      'case-study.showcase': CaseStudyShowcase;
+      'case-study.solution': CaseStudySolution;
       'global.accordion': GlobalAccordion;
       'global.banner': GlobalBanner;
       'global.button': GlobalButton;
+      'global.lists': GlobalLists;
       'global.menu-items': GlobalMenuItems;
       'global.menus': GlobalMenus;
       'global.sub-menu': GlobalSubMenu;
@@ -265,6 +498,15 @@ declare module '@strapi/strapi' {
       'menus.location': MenusLocation;
       'menus.socials': MenusSocials;
       'our-work.case-study': OurWorkCaseStudy;
+      'services-tech.design-features': ServicesTechDesignFeatures;
+      'services-tech.feature-card': ServicesTechFeatureCard;
+      'services-tech.features': ServicesTechFeatures;
+      'services-tech.latest-work': ServicesTechLatestWork;
+      'services-tech.link': ServicesTechLink;
+      'services-tech.projects': ServicesTechProjects;
+      'services-tech.technology': ServicesTechTechnology;
+      'services-tech.technology-icons': ServicesTechTechnologyIcons;
+      'services-tech.technology-items': ServicesTechTechnologyItems;
       'services.services-content': ServicesServicesContent;
       'services.slider-text': ServicesSliderText;
       'testimonial.cards': TestimonialCards;

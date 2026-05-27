@@ -1,10 +1,10 @@
 {
-  "kind": "singleType",
-  "collectionName": "careers",
+  "kind": "collectionType",
+  "collectionName": "services_teches",
   "info": {
-    "singularName": "career",
-    "pluralName": "careers",
-    "displayName": "Career"
+    "singularName": "services-tech",
+    "pluralName": "services-teches",
+    "displayName": "Services"
   },
   "options": {
     "draftAndPublish": true
@@ -23,10 +23,13 @@
       "component": "global.banner",
       "repeatable": false
     },
-    "career": {
-      "type": "component",
-      "component": "career.career",
-      "repeatable": false
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "services-tech.features",
+        "services-tech.latest-work",
+        "services-tech.technology"
+      ]
     }
   }
 }

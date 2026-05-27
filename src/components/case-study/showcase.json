@@ -1,19 +1,10 @@
 {
-  "collectionName": "components_global_banners",
+  "collectionName": "components_case_study_showcases",
   "info": {
-    "displayName": "Banner"
+    "displayName": "Showcase"
   },
   "options": {},
   "attributes": {
-    "heading": {
-      "type": "string"
-    },
-    "subHeading": {
-      "type": "string"
-    },
-    "description": {
-      "type": "richtext"
-    },
     "desktopImage": {
       "type": "media",
       "multiple": false,
@@ -27,6 +18,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "button": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
     }
   },
   "config": {}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_services_tech_latest_works",
+  "info": {
+    "displayName": "LatestWork"
+  },
+  "options": {},
+  "attributes": {
+    "projects": {
+      "type": "component",
+      "component": "services-tech.projects",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

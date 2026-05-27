@@ -16,22 +16,7 @@
       "component": "global.banner",
       "repeatable": false
     },
-    "slider": {
-      "type": "component",
-      "component": "homepage.slider",
-      "repeatable": true
-    },
     "ourWork": {
-      "type": "component",
-      "component": "homepage.our-work",
-      "repeatable": false
-    },
-    "portfolio": {
-      "type": "component",
-      "component": "homepage.portfolio",
-      "repeatable": true
-    },
-    "awards": {
       "type": "component",
       "component": "homepage.our-work",
       "repeatable": false

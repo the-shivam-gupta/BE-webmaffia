@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_services_tech_design_features",
+  "info": {
+    "displayName": "DesignFeatures"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "text"
+    },
+    "card": {
+      "type": "component",
+      "component": "services-tech.feature-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

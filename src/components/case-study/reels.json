@@ -1,21 +1,22 @@
 {
-  "collectionName": "components_homepage_testimonials",
+  "collectionName": "components_case_study_reels",
   "info": {
-    "displayName": "Testimonial"
+    "displayName": "Reels"
   },
   "options": {},
   "attributes": {
-    "heading": {
+    "title": {
       "type": "string"
     },
-    "subheading": {
-      "type": "string"
+    "instagramUrl": {
+      "type": "string",
+      "default": "/"
     },
-    "image": {
+    "video": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
-        "images"
+        "videos"
       ]
     }
   },

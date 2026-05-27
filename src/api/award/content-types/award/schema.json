@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "careers",
+  "collectionName": "awards",
   "info": {
-    "singularName": "career",
-    "pluralName": "careers",
-    "displayName": "Career"
+    "singularName": "award",
+    "pluralName": "awards",
+    "displayName": "Awards"
   },
   "options": {
     "draftAndPublish": true
@@ -23,10 +23,10 @@
       "component": "global.banner",
       "repeatable": false
     },
-    "career": {
+    "card": {
       "type": "component",
-      "component": "career.career",
-      "repeatable": false
+      "component": "awards.card",
+      "repeatable": true
     }
   }
 }

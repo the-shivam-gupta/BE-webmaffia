@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_services_tech_technology_items",
+  "info": {
+    "displayName": "TechnologyItems"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "component",
+      "component": "services-tech.technology-icons",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

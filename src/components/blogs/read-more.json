@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blogs_read_mores",
+  "info": {
+    "displayName": "ReadMore"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "default": "READ MORE"
+    },
+    "href": {
+      "type": "string",
+      "default": "/"
+    }
+  },
+  "config": {}
+}

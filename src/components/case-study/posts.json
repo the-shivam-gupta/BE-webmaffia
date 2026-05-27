@@ -1,22 +1,23 @@
 {
-  "collectionName": "components_homepage_testimonials",
+  "collectionName": "components_case_study_posts",
   "info": {
-    "displayName": "Testimonial"
+    "displayName": "Posts"
   },
   "options": {},
   "attributes": {
-    "heading": {
+    "title": {
       "type": "string"
     },
-    "subheading": {
-      "type": "string"
-    },
-    "image": {
+    "media": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "videos"
       ]
+    },
+    "href": {
+      "type": "string"
     }
   },
   "config": {}

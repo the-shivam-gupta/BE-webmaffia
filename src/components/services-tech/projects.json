@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_services_tech_projects",
+  "info": {
+    "displayName": "Projects"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "link": {
+      "type": "component",
+      "component": "services-tech.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,17 +1,20 @@
 {
-  "collectionName": "components_homepage_testimonials",
+  "collectionName": "components_case_study_seos",
   "info": {
-    "displayName": "Testimonial"
+    "displayName": "Seo"
   },
   "options": {},
   "attributes": {
     "heading": {
       "type": "string"
     },
-    "subheading": {
-      "type": "string"
+    "subHeading": {
+      "type": "text"
     },
-    "image": {
+    "description": {
+      "type": "richtext"
+    },
+    "graph": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [

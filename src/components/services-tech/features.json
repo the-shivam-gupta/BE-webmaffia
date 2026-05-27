@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_services_tech_features",
+  "info": {
+    "displayName": "Features"
+  },
+  "options": {},
+  "attributes": {
+    "designFeature": {
+      "type": "component",
+      "component": "services-tech.design-features",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
