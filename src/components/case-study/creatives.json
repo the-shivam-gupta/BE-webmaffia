@@ -17,6 +17,11 @@
       "type": "component",
       "component": "case-study.reels",
       "repeatable": true
+    },
+    "button": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
     }
   },
   "config": {}

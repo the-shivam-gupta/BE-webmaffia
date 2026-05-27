@@ -8,6 +8,10 @@
     "title": {
       "type": "string"
     },
+    "href": {
+      "type": "string",
+      "default": "/"
+    },
     "subMenu": {
       "type": "component",
       "component": "global.sub-menu",

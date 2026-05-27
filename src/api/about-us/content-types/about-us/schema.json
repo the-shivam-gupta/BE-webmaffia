@@ -27,11 +27,6 @@
       "type": "component",
       "component": "about-us.content",
       "repeatable": false
-    },
-    "awards": {
-      "type": "component",
-      "component": "about-us.latest-wins",
-      "repeatable": false
     }
   }
 }

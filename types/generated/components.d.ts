@@ -69,17 +69,16 @@ export interface CareerCareer extends Struct.ComponentSchema {
   };
 }
 
-export interface CaseStudyChallenge extends Struct.ComponentSchema {
-  collectionName: 'components_case_study_challenges';
+export interface CaseStudyContentBlock extends Struct.ComponentSchema {
+  collectionName: 'components_case_study_content_blocks';
   info: {
-    displayName: 'Challenge';
+    displayName: 'Content Block';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     heading: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
-    lists: Schema.Attribute.Component<'global.lists', true>;
-    subHeading: Schema.Attribute.String;
+    subHeading: Schema.Attribute.Text;
+    tagLine: Schema.Attribute.String;
   };
 }
 
@@ -89,9 +88,20 @@ export interface CaseStudyCreatives extends Struct.ComponentSchema {
     displayName: 'Creatives';
   };
   attributes: {
+    button: Schema.Attribute.Component<'global.button', false>;
     heading: Schema.Attribute.String;
     posts: Schema.Attribute.Component<'case-study.posts', true>;
     reels: Schema.Attribute.Component<'case-study.reels', true>;
+  };
+}
+
+export interface CaseStudyLists extends Struct.ComponentSchema {
+  collectionName: 'components_case_study_lists';
+  info: {
+    displayName: 'lists';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
   };
 }
 
@@ -144,15 +154,50 @@ export interface CaseStudyShowcase extends Struct.ComponentSchema {
   };
 }
 
-export interface CaseStudySolution extends Struct.ComponentSchema {
-  collectionName: 'components_case_study_solutions';
+export interface FooterNavigationLinks extends Struct.ComponentSchema {
+  collectionName: 'components_footer_navigation_links';
   info: {
-    displayName: 'Solution';
+    displayName: 'Navigation Links';
   };
   attributes: {
-    heading: Schema.Attribute.String;
-    lists: Schema.Attribute.Component<'global.lists', true>;
-    subheading: Schema.Attribute.Text;
+    href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
+    label: Schema.Attribute.String;
+  };
+}
+
+export interface FooterOffice extends Struct.ComponentSchema {
+  collectionName: 'components_footer_offices';
+  info: {
+    displayName: 'Office';
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    city: Schema.Attribute.String;
+    email: Schema.Attribute.Email;
+    phone: Schema.Attribute.String;
+  };
+}
+
+export interface FooterServices extends Struct.ComponentSchema {
+  collectionName: 'components_footer_services';
+  info: {
+    displayName: 'Services';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface FooterSocialLinks extends Struct.ComponentSchema {
+  collectionName: 'components_footer_social_links';
+  info: {
+    displayName: 'Social Links';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'>;
+    platform: Schema.Attribute.String;
+    url: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
   };
 }
 
@@ -208,6 +253,7 @@ export interface GlobalMenuItems extends Struct.ComponentSchema {
     displayName: 'Menu Items';
   };
   attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
     subMenu: Schema.Attribute.Component<'global.sub-menu', true>;
     title: Schema.Attribute.String;
   };
@@ -219,10 +265,7 @@ export interface GlobalMenus extends Struct.ComponentSchema {
     displayName: 'Navigation';
   };
   attributes: {
-    button: Schema.Attribute.Component<'global.button', false>;
     items: Schema.Attribute.Component<'global.menu-items', true>;
-    location: Schema.Attribute.Component<'menus.location', true>;
-    socials: Schema.Attribute.Component<'menus.socials', true>;
   };
 }
 
@@ -232,6 +275,7 @@ export interface GlobalSubMenu extends Struct.ComponentSchema {
     displayName: 'Sub Menu';
   };
   attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
     subtitle: Schema.Attribute.String;
   };
 }
@@ -292,28 +336,6 @@ export interface HomepageTestimonial extends Struct.ComponentSchema {
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     subheading: Schema.Attribute.String;
-  };
-}
-
-export interface MenusLocation extends Struct.ComponentSchema {
-  collectionName: 'components_menus_locations';
-  info: {
-    displayName: 'Location';
-  };
-  attributes: {
-    address: Schema.Attribute.RichText;
-    city: Schema.Attribute.String;
-  };
-}
-
-export interface MenusSocials extends Struct.ComponentSchema {
-  collectionName: 'components_menus_socials';
-  info: {
-    displayName: 'Socials';
-  };
-  attributes: {
-    href: Schema.Attribute.String;
-    icons: Schema.Attribute.Media<'images'>;
   };
 }
 
@@ -476,13 +498,17 @@ declare module '@strapi/strapi' {
       'blogs.posts': BlogsPosts;
       'blogs.read-more': BlogsReadMore;
       'career.career': CareerCareer;
-      'case-study.challenge': CaseStudyChallenge;
+      'case-study.content-block': CaseStudyContentBlock;
       'case-study.creatives': CaseStudyCreatives;
+      'case-study.lists': CaseStudyLists;
       'case-study.posts': CaseStudyPosts;
       'case-study.reels': CaseStudyReels;
       'case-study.seo': CaseStudySeo;
       'case-study.showcase': CaseStudyShowcase;
-      'case-study.solution': CaseStudySolution;
+      'footer.navigation-links': FooterNavigationLinks;
+      'footer.office': FooterOffice;
+      'footer.services': FooterServices;
+      'footer.social-links': FooterSocialLinks;
       'global.accordion': GlobalAccordion;
       'global.banner': GlobalBanner;
       'global.button': GlobalButton;
@@ -495,8 +521,6 @@ declare module '@strapi/strapi' {
       'homepage.portfolio': HomepagePortfolio;
       'homepage.slider': HomepageSlider;
       'homepage.testimonial': HomepageTestimonial;
-      'menus.location': MenusLocation;
-      'menus.socials': MenusSocials;
       'our-work.case-study': OurWorkCaseStudy;
       'services-tech.design-features': ServicesTechDesignFeatures;
       'services-tech.feature-card': ServicesTechFeatureCard;

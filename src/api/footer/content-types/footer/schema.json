@@ -11,18 +11,25 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "socialLinks": {
+      "type": "component",
+      "component": "footer.social-links",
+      "repeatable": true
     },
-    "logo": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images"
-      ]
+    "navLinks": {
+      "type": "component",
+      "component": "footer.navigation-links",
+      "repeatable": true
     },
-    "copyright": {
-      "type": "text"
+    "services": {
+      "type": "component",
+      "component": "footer.navigation-links",
+      "repeatable": true
+    },
+    "offices": {
+      "type": "component",
+      "component": "footer.office",
+      "repeatable": true
     }
   }
 }

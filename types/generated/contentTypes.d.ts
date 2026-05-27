@@ -451,7 +451,6 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    awards: Schema.Attribute.Component<'about-us.latest-wins', false>;
     banner: Schema.Attribute.Component<'global.banner', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -572,8 +571,7 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
   };
   attributes: {
     banner: Schema.Attribute.Component<'global.banner', false>;
-    button: Schema.Attribute.Component<'global.button', false>;
-    challenge: Schema.Attribute.Component<'case-study.challenge', false>;
+    contentBlock: Schema.Attribute.Component<'case-study.content-block', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -588,7 +586,6 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
       ['case-study.seo', 'case-study.creatives']
     >;
     showcase: Schema.Attribute.Component<'case-study.showcase', false>;
-    solution: Schema.Attribute.Component<'case-study.solution', false>;
     testimonial: Schema.Attribute.Relation<
       'oneToOne',
       'api::testimonial.testimonial'
@@ -640,7 +637,6 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    copyright: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -650,9 +646,11 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
       'api::footer.footer'
     > &
       Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<'images'>;
+    navLinks: Schema.Attribute.Component<'footer.navigation-links', true>;
+    offices: Schema.Attribute.Component<'footer.office', true>;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
+    services: Schema.Attribute.Component<'footer.navigation-links', true>;
+    socialLinks: Schema.Attribute.Component<'footer.social-links', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -730,7 +728,6 @@ export interface ApiServicesTechServicesTech
     draftAndPublish: true;
   };
   attributes: {
-    banner: Schema.Attribute.Component<'global.banner', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -740,16 +737,15 @@ export interface ApiServicesTechServicesTech
       'api::services-tech.services-tech'
     > &
       Schema.Attribute.Private;
-    pageName: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     sections: Schema.Attribute.DynamicZone<
       [
         'services-tech.features',
         'services-tech.latest-work',
         'services-tech.technology',
+        'global.banner',
       ]
     >;
-    slug: Schema.Attribute.UID<'pageName'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

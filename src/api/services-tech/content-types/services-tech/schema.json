@@ -11,24 +11,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "pageName": {
-      "type": "string"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "pageName"
-    },
-    "banner": {
-      "type": "component",
-      "component": "global.banner",
-      "repeatable": false
-    },
     "sections": {
       "type": "dynamiczone",
       "components": [
         "services-tech.features",
         "services-tech.latest-work",
-        "services-tech.technology"
+        "services-tech.technology",
+        "global.banner"
       ]
     }
   }

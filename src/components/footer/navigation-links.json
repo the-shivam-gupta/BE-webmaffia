@@ -1,11 +1,11 @@
 {
-  "collectionName": "components_global_sub_menus",
+  "collectionName": "components_footer_navigation_links",
   "info": {
-    "displayName": "Sub Menu"
+    "displayName": "Navigation Links"
   },
   "options": {},
   "attributes": {
-    "subtitle": {
+    "label": {
       "type": "string"
     },
     "href": {

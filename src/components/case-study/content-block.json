@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_case_study_content_blocks",
+  "info": {
+    "displayName": "Content Block"
+  },
+  "options": {},
+  "attributes": {
+    "tagLine": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

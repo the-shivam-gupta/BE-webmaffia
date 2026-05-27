@@ -16,15 +16,10 @@
       "component": "global.banner",
       "repeatable": false
     },
-    "challenge": {
+    "contentBlock": {
       "type": "component",
-      "component": "case-study.challenge",
-      "repeatable": false
-    },
-    "solution": {
-      "type": "component",
-      "component": "case-study.solution",
-      "repeatable": false
+      "component": "case-study.content-block",
+      "repeatable": true
     },
     "showcase": {
       "type": "component",
@@ -42,11 +37,6 @@
         "case-study.seo",
         "case-study.creatives"
       ]
-    },
-    "button": {
-      "type": "component",
-      "component": "global.button",
-      "repeatable": false
     }
   }
 }
