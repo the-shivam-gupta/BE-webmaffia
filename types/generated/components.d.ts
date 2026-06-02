@@ -269,6 +269,16 @@ export interface GlobalMenus extends Struct.ComponentSchema {
   };
 }
 
+export interface GlobalPageName extends Struct.ComponentSchema {
+  collectionName: 'components_global_page_names';
+  info: {
+    displayName: 'Page Name';
+  };
+  attributes: {
+    pageName: Schema.Attribute.String;
+  };
+}
+
 export interface GlobalSubMenu extends Struct.ComponentSchema {
   collectionName: 'components_global_sub_menus';
   info: {
@@ -383,7 +393,7 @@ export interface ServicesTechFeatures extends Struct.ComponentSchema {
   attributes: {
     designFeature: Schema.Attribute.Component<
       'services-tech.design-features',
-      true
+      false
     >;
   };
 }
@@ -406,7 +416,17 @@ export interface ServicesTechLink extends Struct.ComponentSchema {
   attributes: {
     href: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
     name: Schema.Attribute.String;
-    type: Schema.Attribute.Text;
+    technology: Schema.Attribute.Text;
+  };
+}
+
+export interface ServicesTechPointers extends Struct.ComponentSchema {
+  collectionName: 'components_services_tech_pointers';
+  info: {
+    displayName: 'Pointers';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
   };
 }
 
@@ -418,6 +438,19 @@ export interface ServicesTechProjects extends Struct.ComponentSchema {
   attributes: {
     image: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.Component<'services-tech.link', false>;
+  };
+}
+
+export interface ServicesTechSnapshot extends Struct.ComponentSchema {
+  collectionName: 'components_services_tech_snapshots';
+  info: {
+    displayName: 'Snapshot';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'global.button', false>;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    pointers: Schema.Attribute.Component<'services-tech.pointers', true>;
   };
 }
 
@@ -515,6 +548,7 @@ declare module '@strapi/strapi' {
       'global.lists': GlobalLists;
       'global.menu-items': GlobalMenuItems;
       'global.menus': GlobalMenus;
+      'global.page-name': GlobalPageName;
       'global.sub-menu': GlobalSubMenu;
       'homepage.clients': HomepageClients;
       'homepage.our-work': HomepageOurWork;
@@ -527,7 +561,9 @@ declare module '@strapi/strapi' {
       'services-tech.features': ServicesTechFeatures;
       'services-tech.latest-work': ServicesTechLatestWork;
       'services-tech.link': ServicesTechLink;
+      'services-tech.pointers': ServicesTechPointers;
       'services-tech.projects': ServicesTechProjects;
+      'services-tech.snapshot': ServicesTechSnapshot;
       'services-tech.technology': ServicesTechTechnology;
       'services-tech.technology-icons': ServicesTechTechnologyIcons;
       'services-tech.technology-items': ServicesTechTechnologyItems;

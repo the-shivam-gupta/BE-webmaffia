@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_services_tech_pointers",
+  "info": {
+    "displayName": "Pointers"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

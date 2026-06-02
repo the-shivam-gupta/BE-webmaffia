@@ -8,7 +8,7 @@
     "designFeature": {
       "type": "component",
       "component": "services-tech.design-features",
-      "repeatable": true
+      "repeatable": false
     }
   },
   "config": {}
