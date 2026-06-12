@@ -11,6 +11,13 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "pageName": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "pageName"
+    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -33,6 +40,9 @@
       "options": {
         "preset": "defaultHtml"
       }
+    },
+    "hero": {
+      "type": "boolean"
     }
   }
 }

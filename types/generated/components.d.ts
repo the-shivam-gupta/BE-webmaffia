@@ -136,7 +136,7 @@ export interface CaseStudySeo extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.RichText;
-    graph: Schema.Attribute.Media<'images'>;
+    graphs: Schema.Attribute.Media<'images', true>;
     heading: Schema.Attribute.String;
     subHeading: Schema.Attribute.Text;
   };

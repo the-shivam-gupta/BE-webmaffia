@@ -14,9 +14,9 @@
     "description": {
       "type": "richtext"
     },
-    "graph": {
+    "graphs": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "allowedTypes": [
         "images"
       ]

@@ -3,6 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
+  "keywords": [
+    "strapi"
+  ],
+  "homepage": "https://github.com/the-shivam-gupta/BE-webmaffia#readme",
+  "bugs": {
+    "url": "https://github.com/the-shivam-gupta/BE-webmaffia/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-shivam-gupta/BE-webmaffia.git"
+  },
+  "license": "ISC",
+  "author": "shivam gupta",
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
     "build": "strapi build",
     "console": "strapi console",
@@ -25,6 +40,7 @@
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0"
   },
+  "devDependencies": {},
   "engines": {
     "node": ">=20.0.0 <=24.x.x",
     "npm": ">=6.0.0"
